@@ -1,2 +1,3 @@
-# gordnzhou.github.io
-Gordon's Personal Portfolio Website
+# Gordon's Personal Portfolio Website
+
+Currently a work in progress...
