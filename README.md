@@ -1,3 +1,3 @@
-# Gordon's Personal Portfolio Website
+# Gordon's Website
 
 Currently a work in progress...

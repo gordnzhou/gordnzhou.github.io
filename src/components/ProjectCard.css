@@ -1,0 +1,24 @@
+.project-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: solid var(--accent-color);
+    border-radius: 1rem;
+    max-width: 400px;
+    line-height: 1;
+    width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.project-card:hover {
+    border-width: 4px;
+    transition: border-width 0.2s ease-in-out
+}
+
+.project-card .name {
+    margin-bottom: 0;
+    font-size: 1.5em;
+}
