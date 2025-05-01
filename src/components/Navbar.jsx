@@ -5,7 +5,7 @@ const Navbar = () => {
         <nav id="navbar-top">
             <div id="left-section">
                 <div class="profile-photo small">
-                    <img src="src/assets/myphoto.png" alt="Gordon's Profile Photo"/>
+                    <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
                 </div>
                 <p class="name">Gordon Zhou</p>
             </div>

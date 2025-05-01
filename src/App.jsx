@@ -7,7 +7,7 @@ const App = () => {
         <>
         <section id="about">
             <div class="profile-photo">
-                <img src="src/assets/myphoto.png" alt="Gordon's Profile Photo"/>
+                <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
             </div>
             <h1>Hi, my name is Gordon</h1>
             <p class="p-about">I am a third-year Math and Computer Science student at the University of British Columbia. 
