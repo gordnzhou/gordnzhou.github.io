@@ -21,8 +21,23 @@
   margin: 0 auto;
 }
 
-.p-about {
+#about {
+  display: flex;
+  justify-content: center;
+}
+
+#about .left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  text-align: left;
+  max-width: 60%;
+}
+
+#about .p-about {
   max-width: 1000px;
+  margin-right: 1rem;
+  font-weight: 500;
 }
 
 .profile-photo {
@@ -46,8 +61,39 @@
   object-fit: cover;
 }
 
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .skills-container {
-  font-size: 1.2em;
+  max-width: 800px;
+  font-size: 1.1em;
   text-align: left;
   line-height: 1.5em;
+}
+
+.wave {
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  padding-bottom: min(100vh, 100%);
+  vertical-align: middle;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: -9;
+}
+
+.wave svg {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+.wave {
+  fill: var(--secondary-bg);
 }

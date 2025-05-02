@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: var(--secondary-bg);
+    background-color: var(--bg-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 4rem;
 
@@ -32,16 +32,30 @@
     margin-left: 1rem;
 }
 
+#navbar-top .resume-button {
+    margin-left: 2rem;
+}
+
 #navbar-top .icon-link {
     font-size: 2rem;
     margin-left: 1.5rem;
+    color: var(--text-color);
 }
 
-#navbar-top .icon-link:hover {
-    filter: brightness(3);
-    transition: color 0.12s ease, filter 0.12s ease;
+#navbar-top .fab.fa-github:hover {
+    color: rgb(255, 255, 169);
+    transform: scale(1.1);
+    transition: color 0.3s ease, transform 0.4s ease;
 }
 
-#navbar-top .resume-button {
-    margin-left: 2rem;
+#navbar-top .fab.fa-linkedin:hover {
+    color: rgb(161, 242, 242);
+    transform: scale(1.1);
+    transition: color 0.3s ease, transform 0.4s ease;
+}
+
+#navbar-top .fas.fa-envelope:hover {
+    color: rgb(248, 175, 255);
+    transform: scale(1.1);
+    transition: color 0.3s ease, transform 0.4s ease;
 }

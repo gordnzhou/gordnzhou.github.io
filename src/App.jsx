@@ -1,18 +1,30 @@
 import './App.css'
 import ExperienceCard from "./components/ExperienceCard"
 import ProjectCard from './components/ProjectCard';
+import Navbar from './components/Navbar';
+import ThemeChanger from './components/ThemeChanger';
 
 const App = () => { 
     return (
         <>
+        <Navbar/>
+        <div className="wave">
+            <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+                <path d="M0, 80 C300, 0 400, 300 500, 50 L500, 00 L0, 0 Z"/>
+            </svg>
+        </div>
+
         <section id="about">
+            <div class="left-section">
+                <h1>Hi, my name is Gordon</h1>
+                <p class="p-about">I am a third-year Math and Computer Science student at the University of British Columbia. 
+                I've always loved coding - from making silly Discord bots in Grade 9 to now exploring new technologies like game console emulation and web development.
+                Beyond coding, I enjoy hiking, gaming, experimenting in the kitchen, and learning new languages.</p>
+                {/* <ThemeChanger/> */}
+            </div>
             <div class="profile-photo">
                 <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
             </div>
-            <h1>Hi, my name is Gordon</h1>
-            <p class="p-about">I am a third-year Math and Computer Science student at the University of British Columbia. 
-            I've always loved coding - from making silly Discord bots in Grade 9 to now exploring new technologies like game console emulation and web development.
-            Beyond coding, I like gaming, hiking, experimenting in the kitchen, and learning a new languages.</p>
         </section>
         <section id="projects">
             <h2>Projects</h2>
@@ -21,7 +33,7 @@ const App = () => {
             <div id="project-list">
                 <ProjectCard
                     name="Memora"
-                    techStack="React, Python, MongoDB"
+                    techStack="React, Python, FastAPI, MongoDB"
                     link="https://github.com/andrew-fenton/memora"
                     description="A voice-powered journaling app built with a RAG retrieval system to gain insights from your journal entries"
                 />
@@ -30,6 +42,14 @@ const App = () => {
                     techStack="Rust, SDL2, HTMl/CSS, Javascript"
                     link="https://github.com/gordnzhou/melon-gb"
                     description="MelonGB is a Gameboy (DMG) and Gameboy Color (CGB) Emulator written in Rust. Visit this project's repository for a link to the emulator demo!"
+                />
+                <ProjectCard
+                    name="Moodplay"
+                    techStack="React, Tensorflow, Vercel, Spotify API"
+                    link="https://github.com/gordnzhou/mood-play"
+                    description="An interactive web app made using React that plays music, 
+                    which changes depending on your mood. Mood detection is done using a custom-trained emotion detection model that's served through a backend hosted on Vercel. 
+                    The site offers an easy-to-use layout, along with a clean and minimalist look designed to keep users engaged."
                 />
                 <ProjectCard
                     name="ImNES"
