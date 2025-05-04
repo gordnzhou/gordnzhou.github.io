@@ -12,15 +12,6 @@
   width: 100%;
 }
 
-#project-list {
-  display: grid;
-  grid-template-columns: repeat(2, 0.5fr);
-  width: 100%;
-  max-width: 950px;
-  place-items: center;
-  margin: 0 auto;
-}
-
 #about {
   display: flex;
   justify-content: center;
