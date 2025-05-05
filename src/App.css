@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.error-message {
+  margin: 0.5rem;
+  font-weight: 600;
+  font-size: 1em;
+  text-decoration: underline;
+}
+
 #exp-list {
   display: flex;
   flex-direction: column;

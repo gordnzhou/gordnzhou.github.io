@@ -19,7 +19,7 @@ const EmailForm = () => {
         const email = inputs["email"];
         const content = inputs["content"];
 
-        if (content == "") {
+        if (!content) {
             setFormError("Content must be non-empty");
             return;
         }
@@ -30,7 +30,7 @@ const EmailForm = () => {
             return;
         }
 
-        let response = await fetch(`${BACKEND_URL}/send-email`, {
+        const response = await fetch(`${BACKEND_URL}/send-email`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email, content }),
@@ -41,7 +41,7 @@ const EmailForm = () => {
             alert(`Message sent!\nAnonymous: ${email ? "No" : "Yes"}\nEmail: ${email || "(empty)"}`);
             console.log(text, email, content);
         } else {
-            console.error("Worker Error:", text);
+            console.error("Backend Error:", text);
         }
     }
 

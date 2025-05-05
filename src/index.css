@@ -20,10 +20,6 @@
   margin-top: 6rem;
 }
 
-/* * {
-  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease, fill 0.3s ease;
-} */
-
 a {
   text-decoration: none;
   color: var(--text-color);
@@ -68,4 +64,8 @@ button:hover {
 ::selection {
   background-color: var(--text-color);
   color: var(--bg-color);
+}
+
+.preload * {
+  transition: background-color 1s ease, color 1s ease, border 1s ease, fill 1s ease;
 }

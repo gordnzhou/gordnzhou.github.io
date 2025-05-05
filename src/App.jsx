@@ -2,6 +2,7 @@ import './App.css'
 import EmailForm from './components/EmailForm';
 import ExperienceCard from "./components/ExperienceCard"
 import Navbar from './components/Navbar';
+import ThemeChanger from './components/ThemeChanger';
 import ProjectGallery from './components/ProjectGallery';
 
 const App = () => { 
@@ -20,7 +21,7 @@ const App = () => {
                 <p class="p-about">I am a third-year Math and Computer Science student at the University of British Columbia. 
                 I've always loved coding - from making silly Discord bots in Grade 9 to now exploring new technologies like game console emulation and web development.
                 Beyond coding, I enjoy hiking, gaming, experimenting in the kitchen, and learning new languages.</p>
-                {/* <ThemeChanger/> */}
+                <ThemeChanger/>
             </div>
             <div class="profile-photo">
                 <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>

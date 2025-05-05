@@ -1,42 +1,46 @@
 import './ThemeChanger.css';
-import axios from 'axios';
 import React, { useState } from 'react';
 
-const prompt = 'Generate a color palette for a retro 80s synthwave theme';
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const ThemeChanger = () => {
     const [textInput, setTextInput] = useState('');
     const [themePrompt, setThemePrompt] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [errorMsg, setErrorMsg] = useState("");
 
     const handleInputChange = (e) => {
+        setErrorMsg("");
         setTextInput(e.target.value);
     };
 
-    const handleSubmit = (e) => {
-        setThemePrompt(textInput);
-        axios.get('http://colormind.io/api/', {
-        params: {
-            model: 'default',
+    const handleSubmit = async (e) => {
+        if (!textInput) {
+            return;
         }
-        })
-        .then(response => {
-            console.log(response.data); 
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    };
 
-    const toggleTheme = () => {
-        document.documentElement.style.setProperty('--bg-color', '#2e2b29');
-        document.documentElement.style.setProperty('--secondary-bg', '#3b3734');
-        document.documentElement.style.setProperty('--accent-color', '#a67b5b');
-        document.documentElement.style.setProperty('--text-color', '#eae6df');
+        setLoading(true);
+        const params = new URLSearchParams({ prompt: textInput });
+        const response = await fetch(`${BACKEND_URL}/theme-gen?${params.toString()}`);
+        if (!response.ok) {
+            setErrorMsg("Unable to find a theme :(")
+            setLoading(false);
+            console.error("Backend error", response.text());
+            return;
+        }
+
+        const data = await response.json();
+        setLoading(false);
+        console.log("RETURNED FROM API:", data);
+        document.documentElement.style.setProperty('--bg-color', data["bg-color"]);
+        document.documentElement.style.setProperty('--secondary-bg', data["secondary-bg"]);
+        document.documentElement.style.setProperty('--accent-color', data["accent-color"]);
+        document.documentElement.style.setProperty('--text-color', data["text-color"]);
+        setThemePrompt(textInput);
     };
 
     return (
         <>
-        <button onClick={toggleTheme}>Change Theme</button>
         <label for="theme-prompt-input">
             <h3>{themePrompt ? ("Your theme: " + themePrompt) : "Don't like the colours? Give it a new look"}</h3>     
             Describe a theme, then the website will change colours to try and match that theme.
@@ -46,10 +50,11 @@ const ThemeChanger = () => {
                 class="theme-prompt-input"
                 type="text"
                 onChange={handleInputChange}
-                placeholder="ex: Dark Academia Vibe"
+                placeholder="ex: Vacation, Forest..."
             />
-            <button class="submit-button" onClick={handleSubmit}>Submit</button>
+            <button class="submit-button" onClick={handleSubmit}>Confirm {loading && <span className="spinner" aria-label="Loading..."></span>} </button>
         </div>
+        { errorMsg && <p class="error-message">{errorMsg}</p>}
         </>
     )
 }
