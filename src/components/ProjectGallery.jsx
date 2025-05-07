@@ -43,6 +43,7 @@ const ProjectCard = ({name, techStack, description, imageSrc, link}) => {
                 <h3 class="name">{name}</h3>
                 <h4 class="text-stack">{techStack}</h4>
                 <p class="description">{description}</p>
+                <p class="hover-text">Visit Project Repository</p>
             </a>
         </div>
     )

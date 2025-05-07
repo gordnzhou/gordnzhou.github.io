@@ -6,6 +6,7 @@ const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const EmailForm = () => {
     const [inputs, setInputs] = useState("");
     const [formError, setFormError] = useState("");
+    const [success, setSuccess] = useState("");
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -21,27 +22,35 @@ const EmailForm = () => {
 
         if (!content) {
             setFormError("Content must be non-empty");
+            setSuccess('');
             return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (email && !emailRegex.test(email)) {
             setFormError("Please enter a valid email address");
+            setSuccess('');
             return;
         }
 
-        const response = await fetch(`${BACKEND_URL}/send-email`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, content }),
-        });
+        try {
+            const response = await fetch(`${BACKEND_URL}/send-email`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, content }),
+            });
 
-        const text = await response.text();
-        if (response.ok) {
-            alert(`Message sent!\nAnonymous: ${email ? "No" : "Yes"}\nEmail: ${email || "(empty)"}`);
+            if (!response || !response.ok) {
+                console.error("Backend Error:", text);
+                throw new Error("");
+            }
+
+            const text = await response.text();
+            setSuccess(`Message sent successfully!\nAnonymous: ${email ? "No" : "Yes"}\nEmail: ${email || "(empty)"}`);
             console.log(text, email, content);
-        } else {
-            console.error("Backend Error:", text);
+        } catch (e) {
+            setFormError("Unable to send email :(");
+            setSuccess('');
         }
     }
 
@@ -51,9 +60,10 @@ const EmailForm = () => {
                 <p>Do you have any questions or comments, or just want to say hi? Feel free to use this form!</p>
                 <label for="email"><b>Your email (optional):</b></label>
                 <input class="email-input" type="text" name="email" placeholder="your email address here.." onChange={handleChange}/>
-                <textarea name="content" placeholder="blah blah blah..." onChange={handleChange}/>
+                <textarea name="content" placeholder="your message here..." onChange={handleChange}/>
                 <input class="submit-button" type="submit"/>
-                {formError && <div class="error-message">{formError}</div>}
+                {formError && <div class="error-message">Error: {formError}</div>}
+                {success && <div class="success-message">{success}</div>}
             </form>
         </div>
     )

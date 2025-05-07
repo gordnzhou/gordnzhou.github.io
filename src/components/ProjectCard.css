@@ -5,8 +5,8 @@
     border: solid var(--accent-color);
     border-radius: 1rem;
     max-width: 400px;
+    width: 80%;
     line-height: 1;
-    width: 100%;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     margin-bottom: 3rem;
@@ -30,4 +30,16 @@
     max-width: 950px;
     place-items: center;
     margin: 0 auto;
+}
+
+.hover-text {
+    color: var(--accent-color);
+    font-weight: 700;
+    text-decoration: underline;
+    transition: opacity 0.4s ease;
+    opacity: 0;
+}
+
+.project-card:hover .hover-text {
+    opacity: 1;
 }
