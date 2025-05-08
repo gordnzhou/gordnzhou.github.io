@@ -1,3 +1,4 @@
-# Gordon's Website
+# Gordon's Portfolio Website
 
-Currently a work in progress...
+Visit the website here!
+https://gordnzhou.github.io
