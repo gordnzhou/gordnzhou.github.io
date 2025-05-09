@@ -1,45 +1,111 @@
+.projects-container {
+    display: flex;
+    justify-content: center;
+}
+
+.project-minicards {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    width: 35%;
+}
+
+.project-minicards p {
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0;
+    justify-self: flex-start;
+    align-self: flex-start;
+}
+
 .project-card {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    border: solid var(--accent-color);
+    border: solid 4px var(--accent-color);
     border-radius: 1rem;
-    max-width: 400px;
-    width: 80%;
     line-height: 1;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-    margin-bottom: 3rem;
+    max-width: 400px;
+    width: 60%;
+    height: 400px;
     text-align: left;
 }
 
-.project-card:hover {
-    border-width: 4px;
-    transition: border-width 0.2s ease-in-out
-}
-
-.project-card .name {
-    margin-bottom: 0;
-    font-size: 1.5em;
-}
-
-#project-list {
-    display: grid;
-    grid-template-columns: repeat(2, 0.5fr);
+.project-card .top {
     width: 100%;
-    max-width: 950px;
-    place-items: center;
-    margin: 0 auto;
 }
 
-.hover-text {
-    color: var(--accent-color);
-    font-weight: 700;
+.project-card .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.project-card .header .name {
+    font-size: 2em;
+    margin-bottom: 0;
     text-decoration: underline;
-    transition: opacity 0.4s ease;
-    opacity: 0;
 }
 
-.project-card:hover .hover-text {
-    opacity: 1;
+.project-card .header .timeframe {
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.project-card .footer {
+    margin-bottom: 1rem;
+}
+
+.project-card .description {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.project-card:hover {
+    border-width: 8px;
+    transition: border-width 0.2s ease-in-out;
+}
+
+.project-card .footer .tags-container {
+    margin-top: 1rem;
+}
+
+.project-card .tag {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 9999px;
+    background-color: #919191;
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    margin: 4px;
+    cursor: default;
+    user-select: none;
+    transition: none;
+}
+
+.project-minicard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border: solid 1px var(--accent-color);
+    border-radius: 1rem;
+    line-height: 1;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1rem;
+}
+
+.project-minicard:hover {
+    border-width: 4px;
+    transition: border-width 0.3s ease-in;
+}
+
+.project-minicard.selected {
+    border-width: 4px;
 }

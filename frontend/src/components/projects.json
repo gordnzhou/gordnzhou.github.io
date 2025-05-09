@@ -1,38 +1,52 @@
 [
     {
         "name": "Memora",
-        "date": "Hack the North 2024",
+        "timeframe": "Hack the North 2024",
         "date_meta": "9/1/2024",
         "repo_link": "https://github.com/andrew-fenton/memora",
         "website_link": "",
-        "tech_stack": ["React", "Python", "FastAPI", "MongoDB"],
+        "tech_tags": ["React", "Python", "FastAPI", "MongoDB"],
+        "other_tags": ["Hackathon", "Frontend"],
         "description": "A voice-powered journaling app built with a RAG retrieval system to gain insights from your journal entries."
     },
     {
         "name": "MelonGB",
-        "date": "January 2024 - March 2024",
+        "timeframe": "January 2024 - March 2024",
         "date_meta": "1/1/2024",
         "repo_link": "https://github.com/gordnzhou/melon-gb",
         "website_link": "https://gordnzhou.github.io/melon-gb/",
-        "tech_stack": ["Rust", "SDL2", "HTMl/CSS", "Javascript"],
+        "tech_tags": ["Rust", "SDL2", "HTMl/CSS", "Javascript"],
+        "other_tags": ["Emulator"],
         "description": "MelonGB is a Gameboy (DMG) and Gameboy Color (CGB) Emulator written in Rust. Visit this project's repository for a link to the emulator demo!"
     },
     {
         "name": "Moodplay",
-        "date": "January 2023 - June 2023",
+        "timeframe": "January 2023 - June 2023",
         "date_meta": "1/1/2023",
         "repo_link": "https://github.com/gordnzhou/mood-play",
         "website_link": "https://mood-play.netlify.app/",
-        "tech_stack": ["React", "Tensorflow", "Vercel", "Spotify API"],
+        "tech_tags": ["React", "Tensorflow", "Vercel", "Spotify API"],
+        "other_tags": ["Full Stack"],
         "description": "An interactive web app made using React that plays music, which changes depending on your mood. Mood detection is done using a custom-trained emotion detection model that's served through a backend hosted on Vercel. The site offers an easy-to-use layout, along with a clean and minimalist look designed to keep users engaged."
     },
     {
         "name": "ImNES",
-        "date": "May 2024 - June 2024",
+        "timeframe": "May 2024 - June 2024",
         "date_meta": "5/1/2024",
         "repo_link": "https://github.com/gordnzhou/imnes-emulator",
         "website_link": "",
-        "tech_stack": ["Rust", "ImGUI"],
-        "description": "ImNES is NES emulator implemented in Rust. It includes a debugging UI made using ImGui for desktop. The desktop UI has various features such as inspect the CPU, PPU, and APU state, viewing cartridge details, and controlling each audio channel. You can also pause, stop, or restart the emulation, as well as adjust the game speed"
+        "tech_tags": ["Rust", "ImGUI"],
+        "other_tags": ["Emulator"],
+        "description": "ImNES is NES emulator implemented in Rust. It includes a debugging UI made using ImGui for desktop. The desktop UI has various features such as inspect the CPU, PPU, and APU state, viewing cartridge details, and controlling each audio channel. You can also pause, stop, or restart the emulation, as well as adjust the game speed."
+    },
+    {
+        "name": "FreshTrack",
+        "timeframe": "NWHacks 2025",
+        "date_meta": "1/1/2025",
+        "repo_link": "https://github.com/naheyansheikh/freshtrack",
+        "website_link": "",
+        "tech_tags": ["Typescript", "React Native", "Expo", "XCode", "OCR"],
+        "other_tags": ["Hackathon", "Full Stack"],
+        "description": "FreshTrack leverages AI and community networks to seamlessly track, reduce, and share food, minimizing waste and promoting sustainability."
     }
 ]

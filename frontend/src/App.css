@@ -38,6 +38,15 @@
   width: 100%;
 }
 
+#projects {
+  margin-top: 8rem;
+}
+
+#experience {
+  margin-top: 8rem;
+}
+
+
 #about {
   display: flex;
   justify-content: center;

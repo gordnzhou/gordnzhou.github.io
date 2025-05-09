@@ -36,26 +36,32 @@
     margin-left: 2rem;
 }
 
-#navbar-top .icon-link {
+.icon-link {
     font-size: 2rem;
     margin-left: 1.5rem;
     color: var(--text-color);
 }
 
-#navbar-top .fab.fa-github:hover {
+.fab.fa-github:hover {
     color: rgb(255, 255, 169);
     transform: scale(1.1);
     transition: color 0.3s ease, transform 0.4s ease;
 }
 
-#navbar-top .fab.fa-linkedin:hover {
+.fab.fa-linkedin:hover {
     color: rgb(161, 242, 242);
     transform: scale(1.1);
     transition: color 0.3s ease, transform 0.4s ease;
 }
 
-#navbar-top .fas.fa-envelope:hover {
+.fas.fa-envelope:hover {
     color: rgb(248, 175, 255);
+    transform: scale(1.1);
+    transition: color 0.3s ease, transform 0.4s ease;
+}
+
+.fa.fa-globe:hover {
+    color: rgb(180, 173, 255);
     transform: scale(1.1);
     transition: color 0.3s ease, transform 0.4s ease;
 }
