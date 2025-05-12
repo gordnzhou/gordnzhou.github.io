@@ -2,11 +2,11 @@
     {
         "name": "Memora",
         "timeframe": "Hack the North 2024",
-        "date_meta": "9/1/2024",
+        "date_meta": "9/14/2024",
         "repo_link": "https://github.com/andrew-fenton/memora",
         "website_link": "",
         "tech_tags": ["React", "Python", "FastAPI", "MongoDB"],
-        "other_tags": ["Hackathon", "Frontend"],
+        "other_tags": ["Hackathon", "Frontend", "AI"],
         "description": "A voice-powered journaling app built with a RAG retrieval system to gain insights from your journal entries."
     },
     {
@@ -26,7 +26,7 @@
         "repo_link": "https://github.com/gordnzhou/mood-play",
         "website_link": "https://mood-play.netlify.app/",
         "tech_tags": ["React", "Tensorflow", "Vercel", "Spotify API"],
-        "other_tags": ["Full Stack"],
+        "other_tags": ["Full Stack", "AI"],
         "description": "An interactive web app made using React that plays music, which changes depending on your mood. Mood detection is done using a custom-trained emotion detection model that's served through a backend hosted on Vercel. The site offers an easy-to-use layout, along with a clean and minimalist look designed to keep users engaged."
     },
     {
@@ -42,11 +42,61 @@
     {
         "name": "FreshTrack",
         "timeframe": "NWHacks 2025",
-        "date_meta": "1/1/2025",
+        "date_meta": "1/19/2025",
         "repo_link": "https://github.com/naheyansheikh/freshtrack",
         "website_link": "",
         "tech_tags": ["Typescript", "React Native", "Expo", "XCode", "OCR"],
-        "other_tags": ["Hackathon", "Full Stack"],
+        "other_tags": ["Hackathon", "Mobile", "AI"],
         "description": "FreshTrack leverages AI and community networks to seamlessly track, reduce, and share food, minimizing waste and promoting sustainability."
+    },
+    {
+        "name": "Disaster Response App",
+        "timeframe": "January 2025 - April 2025",
+        "date_meta": "4/1/2025",
+        "repo_link": "https://github.com/gordnzhou/Disaster-Relief-App",
+        "website_link": "",
+        "tech_tags": ["SQL", "PHP", "Oracle"],
+        "other_tags": ["School", "Database"],
+        "description": "A PHP website for disaster relief coordination, including rescue tracking and managed volunteers and supplies at relief centers. Data is stored on a SQL database hosted on Oracle with query sanitization to prevent injection attacks. This project was built for CPSC 304, a relational database course. Big thanks to Andy Xie and Alex Yang!"
+    },
+    {
+        "name": "Genshin Wish Simulator",
+        "timeframe": "January 2024 - April 2024",
+        "date_meta": "4/1/2024",
+        "repo_link": "https://github.com/gordnzhou/genshin-wish-simulator",
+        "website_link": "",
+        "tech_tags": ["Java", "Java Swing"],
+        "other_tags": ["School"],
+        "description": "This is an app that simulates the Gacha system called 'Wishing', from the popular game 'Genshin Impact'. Users will be able to 'wish' for their desired characters or weapons, explore various outcomes, and track their progress. This project was built for CPSC 210: Software Construction."
+    },
+    {
+        "name": "Spotify to Youtube",
+        "timeframe": "March 2022",
+        "date_meta": "3/1/2022",
+        "repo_link": "https://github.com/gordnzhou/Spotify-Playlist-to-Youtube",
+        "website_link": "",
+        "tech_tags": ["Python", "Spotify API", "YouTube API"],
+        "other_tags": [],
+        "description": "Converts your favourite playlists on Spotify into a YouTube playlist, with minimal setup! Uses Spotify's API to fetch the data of all songs in a Spotify playlist and queries each song using the YouTube API to find its YouTube counterpart."
+    },
+    {
+        "name": "Melon Discord Bot",
+        "timeframe": "November 2020 - January 2022",
+        "date_meta": "11/1/2020",
+        "repo_link": "https://github.com/gordnzhou/Melon-Bot",
+        "website_link": "",
+        "tech_tags": ["Python", "MongoDB", "Discord API"],
+        "other_tags": ["Discord Bot", "Database"],
+        "description": "Meet Melon, a fun and helpful discord bot for fellow members of your Discord server. Melon tries to increase your server's engagement with fun features like birthday annoucements, VC time rankings and GIF generation. Server metrics and user data are stored using MongoDB."
+    },
+    {
+        "name": "ASCII Animation Generator",
+        "timeframe": "November 2021",
+        "date_meta": "11/1/2021",
+        "repo_link": "https://github.com/gordnzhou/ASCII-Animation-generator",
+        "website_link": "",
+        "tech_tags": ["Python", "OpenCV", "Pygame"],
+        "other_tags": ["ASCII Art"],
+        "description": "A command-line script that plays any MP4 file as an ASCII animation in your CLI, with sound included! CLI Window is automatically resized to match aspect ratio and FPS is maintained for a smooth playback. a trend on the internet of shocasing remakes of the animation of Bad Apple!! Was inspired by an internet trend of animating the video, Bad Apple!! but on any medium you can think of."
     }
 ]

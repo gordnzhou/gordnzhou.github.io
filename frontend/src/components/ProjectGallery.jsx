@@ -11,7 +11,11 @@ const tagBackgrounds = {
     "Full Stack": "#4d90a0",
     "Frontend": "#b475d8",
     "Emulator": "#d94f4f",
-  };
+    "School": "#1f77b4",
+    "Mobile": "#28a745",
+    "AI": "#f67280",
+    "Database": "#a29bfe"
+};
 
 const ProjectGallery = () => {
     const [currentProject, setCurrentProject] = useState(sortedProjects[0]);
@@ -19,16 +23,18 @@ const ProjectGallery = () => {
     return (
         <div class="projects-container">
             <ProjectCard project={currentProject}/>
-            <div class="project-minicards">
-                <p>sorted by date..</p>
-                {sortedProjects.map((project, i) => (
-                    <ProjectMinicard 
-                        key={i} 
-                        project={project} 
-                        currentProject={currentProject}
-                        setCurrentProject={setCurrentProject} 
-                    />
-                ))}
+            <div class="right-container">
+                <p class="sort-by-p">sorted by date..</p>
+                <div class="project-minicards">
+                    {sortedProjects.map((project, i) => (
+                        <ProjectMinicard 
+                            key={i} 
+                            project={project} 
+                            currentProject={currentProject}
+                            setCurrentProject={setCurrentProject} 
+                        />
+                    ))}
+                </div>
             </div>
         </div>
     )
@@ -76,14 +82,24 @@ const ProjectCard = ({project}) => {
     )
 }
 
+
+const MINI_TAG_LIMIT = 2;
+
 const ProjectMinicard = ({project, currentProject, setCurrentProject}) => {
     return (
         <div class={"project-minicard " + (project.name === currentProject.name && "selected")} onClick={() => setCurrentProject(project)}>
-            <h3 class="name">{project.name}</h3>
-            <h4 class="text-stack">{project.tech_tags.reduce(
-                (acc, cur, i) => (i > 3 ? acc : (i == 3 ? acc + "..." : acc + cur + (i === project.tech_tags.length - 1 ? "" : " | "))),
-                ""
-            )}</h4>
+            <div class="top">
+                <h3 class="name">{project.name}</h3>
+                <h4 class="text-stack">{project.tech_tags.reduce(
+                    (acc, cur, i) => (i > MINI_TAG_LIMIT ? acc : (i == MINI_TAG_LIMIT ? acc + "..." : acc + cur + (i === project.tech_tags.length - 1 ? "" : " | "))),
+                    ""
+                )}</h4>
+            </div>
+            <div class="tags-container">
+                {project.other_tags.map((tag, i) => {
+                    return <div style={{backgroundColor: tagBackgrounds[tag]}} class="tag-circle" key={i}/>
+                })}
+            </div>
         </div>
     )
 }
