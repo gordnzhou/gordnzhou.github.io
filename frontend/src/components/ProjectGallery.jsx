@@ -74,7 +74,7 @@ const ProjectCard = ({project}) => {
                 </div>
                 <div class="tags-container">
                     {project.other_tags.map((tag, i) => {
-                        return <p style={{backgroundColor: tagBackgrounds[tag]}} class="tag" key={i}>{tag}</p>
+                        return <p style={{backgroundColor: tagBackgrounds[tag]}} class="project-tag" key={i}>{tag}</p>
                     })}
                 </div>
             </div>
@@ -97,7 +97,9 @@ const ProjectMinicard = ({project, currentProject, setCurrentProject}) => {
             </div>
             <div class="tags-container">
                 {project.other_tags.map((tag, i) => {
-                    return <div style={{backgroundColor: tagBackgrounds[tag]}} class="tag-circle" key={i}/>
+                    return <p style={{backgroundColor: tagBackgrounds[tag]}} class="project-tag small" key={i}>
+                        <span>{tag}</span>
+                    </p>
                 })}
             </div>
         </div>

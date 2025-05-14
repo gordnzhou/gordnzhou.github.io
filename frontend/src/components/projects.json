@@ -96,7 +96,7 @@
         "repo_link": "https://github.com/gordnzhou/ASCII-Animation-generator",
         "website_link": "",
         "tech_tags": ["Python", "OpenCV", "Pygame"],
-        "other_tags": ["ASCII Art"],
+        "other_tags": [],
         "description": "A command-line script that plays any MP4 file as an ASCII animation in your CLI, with sound included! CLI Window is automatically resized to match aspect ratio and FPS is maintained for a smooth playback. a trend on the internet of shocasing remakes of the animation of Bad Apple!! Was inspired by an internet trend of animating the video, Bad Apple!! but on any medium you can think of."
     }
 ]

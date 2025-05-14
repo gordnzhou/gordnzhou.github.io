@@ -18,6 +18,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin-top: 6rem;
+  scroll-behavior: smooth;
 }
 
 a {

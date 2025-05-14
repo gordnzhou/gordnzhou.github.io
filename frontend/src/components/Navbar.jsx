@@ -3,12 +3,14 @@ import "./Navbar.css"
 const Navbar = () => {
     return (
         <nav id="navbar-top">
+            <a href="#wave">
             <div id="left-section">
-                <div class="profile-photo small">
-                    <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
-                </div>
-                <p class="name">Gordon Zhou</p>
+                    <div class="profile-photo small">
+                        <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
+                    </div>
+                    <p class="name">Gordon Zhou</p>
             </div>
+            </a>
             <div id="right-section">
                 <div id="links-container">
                     <a class="icon-link" href="https://github.com/gordnzhou" target="_blank" aria-label="GitHub">

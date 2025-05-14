@@ -9,7 +9,7 @@ const App = () => {
     return (
         <>
         <Navbar/>
-        <div className="wave">
+        <div id="wave">
             <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
                 <path d="M0, 80 C300, 0 400, 300 500, 50 L500, 00 L0, 0 Z"/>
             </svg>
