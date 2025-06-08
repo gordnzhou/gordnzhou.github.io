@@ -17,7 +17,7 @@ const App = () => {
 
         <section id="about">
             <div class="left-section">
-                <h1>Hi, my name is Gordon</h1>
+                <h1>Hello 👋 my name is Gordon</h1>
                 <p class="p-about">I am a third-year Math and Computer Science student at the University of British Columbia. 
                 I've always loved coding - from making silly Discord bots in Grade 9 to now exploring new technologies like game console emulation and web development.
                 Beyond coding, I enjoy hiking, gaming, experimenting in the kitchen, and learning new languages.</p>
