@@ -4,8 +4,8 @@ const CORS_HEADERS = {
 	"Access-Control-Allow-Headers": "Content-Type",
 };
 
-const GEMINI_CONTEXT = "Generate a JSON object with four fields: accent-color, bg-color, secondary-bg, and text-color. Each field contains valid HEX colors. Base it on the following description: ";
-const PALETTE_REGEX = `\{*\"accent-color\"*:*\".+?\"*,*\"bg-color\"*:*\".+?\"*,*"secondary-bg\"*:*\".+?\"*,*\"text-color\"*:*\".+?\"*\}`;
+const GEMINI_CONTEXT = "Generate a JSON object with 5 fields: accent-color, bg-color, secondary-bg, and text-color, emoji. Each field contains valid HEX colors except emoji, which contains an emoji code. Base it on the following description: ";
+const PALETTE_REGEX = `\{*\"accent-color\"*:*\".+?\"*,*\"bg-color\"*:*\".+?\"*,*"secondary-bg\"*:*\".+?\"*,*\"text-color\"*:*\".+?\"*,*\"emoji\"*:*\".+?\"*\}`;
   
 export default async function themeGen(request, env) {
     const url = new URL(request.url);

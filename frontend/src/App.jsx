@@ -10,8 +10,8 @@ const App = () => {
         <>
         <Navbar/>
         <div id="wave">
-            <svg viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
-                <path d="M0, 80 C300, 0 400, 300 500, 50 L500, 00 L0, 0 Z"/>
+        <svg viewBox="0 0 500 500" preserveAspectRatio="none" width="100%" height="150px">
+            <path d="M0,0 L0,200 C125,100 375,300 500,200 L500,0 Z"/>
             </svg>
         </div>
 

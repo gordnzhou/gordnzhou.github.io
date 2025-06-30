@@ -10,7 +10,15 @@
   --accent-color: #a67b5b;
   --text-color: #fff9f0;
 
-  background-color: var(--bg-color);
+  background: linear-gradient(
+    to bottom,
+    var(--secondary-bg) 0,
+    var(--secondary-bg) 300px,
+    var(--bg-color) 300px, 
+    var(--bg-color) 95%,
+    var(--secondary-bg) 95%,
+    var(--secondary-bg) 100%
+  );
   color: var(--text-color);
 
   font-synthesis: none;
@@ -31,6 +39,7 @@ body {
   display: flex;
   place-items: center;
   min-height: 100vh;
+  overscroll-behavior: none;
 }
 
 h1 {
@@ -71,5 +80,5 @@ p {
 }
 
 .preload * {
-  transition: background-color 1s ease, color 1s ease, border 1s ease, fill 1s ease;
+  transition: color 1s ease, border 1s ease;
 }

@@ -54,7 +54,7 @@ const EmailForm = () => {
             }
 
             const text = await response.text();
-            setSuccess(`Message sent successfully!\nAnonymous: ${email ? "No" : "Yes"}\nEmail: ${email || "(empty)"}`);
+            setSuccess(`Message sent successfully!\nEmail: ${email || "(empty)"}`);
             // console.log(text, email, content);
         } catch (e) {
             setFormError("Unable to send email :(");

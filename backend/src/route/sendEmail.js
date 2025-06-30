@@ -5,19 +5,18 @@ const CORS_HEADERS = {
 };
 
 export default async function sendEmail(request, env) {
-    const { email, content } = await request.json();
+    const { email, name, subject, content} = await request.json();
 
     if (!content || content.trim() === "") {
         return new Response("Content must be non-empty", { status: 400, headers: CORS_HEADERS });
     }
     
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (email && !emailRegex.test(email)) {
-        return new Response("Invalid email address", { status: 400, headers: CORS_HEADERS });
+    if (!email || !emailRegex.test(email)) {
+        return new Response("Invalid or empty email address", { status: 400, headers: CORS_HEADERS });
     }
 
 	const token = "Bot " + env.DISCORD_TOKEN;
-
 	const dmChannel = await fetch(`https://discord.com/api/v10/users/@me/channels`, {
       	method: 'POST',
       	headers: {
@@ -33,7 +32,9 @@ export default async function sendEmail(request, env) {
         	'Authorization': token,
         	'Content-Type': 'application/json'
       	},
-      	body: JSON.stringify({ content: `(${ email || "Anonymous"}) Message from Personal Website\n${content}` })
+      	body: JSON.stringify({ content: 
+            `Message from Personal Website\nSender Email: ${email}\nSender Name: ${name || "(none)"}\nSubject: ${subject || "(none)"}\nMessage: ${content}` 
+        })
     });
 
     return new Response('DM sent!', { status: 200, headers: CORS_HEADERS });
