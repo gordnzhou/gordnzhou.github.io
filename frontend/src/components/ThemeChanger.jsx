@@ -33,12 +33,12 @@ const ThemeChanger = () => {
             const data = await response.json();
 
             setLoading(false);
-            console.log("RETURNED FROM API:", data);
+            // console.log("RETURNED FROM API:", data);
             document.documentElement.style.setProperty('--bg-color', data["bg-color"]);
             document.documentElement.style.setProperty('--secondary-bg', data["secondary-bg"]);
             document.documentElement.style.setProperty('--accent-color', data["accent-color"]);
             document.documentElement.style.setProperty('--text-color', data["text-color"]);
-            setThemePrompt(textInput);
+            setThemePrompt(`${textInput} ${data["emoji"] || ""}`);
         } catch (e) {
             setErrorMsg("Unable to find a theme :(")
             setLoading(false);
@@ -58,9 +58,9 @@ const ThemeChanger = () => {
                 class="theme-prompt-input"
                 type="text"
                 onChange={handleInputChange}
-                placeholder="ex: Vacation, Forest..."
+                placeholder="ex: Cherry Blossom, Deep Space"
             />
-            <button class="submit-button" onClick={handleSubmit}>Confirm {loading && <span className="spinner" aria-label="Loading..."></span>} </button>
+            <button class="button-main" onClick={handleSubmit}>Confirm {loading && <span className="spinner" aria-label="Loading..."></span>} </button>
         </div>
         { errorMsg && <p class="error-message">Error: {errorMsg}</p>}
         </>

@@ -28,18 +28,19 @@ const App = () => {
             </div>
         </section>
         <section id="projects">
-            <h2>Projects</h2>
+            <h2>Technical Projects</h2>
             <ProjectGallery/>
         </section>
         <section id="experience">
-            <h2>Experience</h2>
+            <h2>Relevant Experience</h2>
             <div id="exp-list">
                 <ExperienceCard
                     title="Teaching Assistant"
                     duration="September 2024 - Present"
                     organization="University of British Columbia"
                     bullets={[
-                        "Taught and guided 500+ students in UBC's introductory computer science course CPSC 121, leading lab sections for 180+ students and instructing them in circuit design and simulation"
+                        "Taught and guided 500+ students in UBC's introductory computer science course CPSC 121, leading lab sections for 180+ students and instructing them in circuit design and simulation",
+                        "Led 108+ total hours of labs weekly to support students. Graded 200+ exams and assignments with personalized feedback on logical proofs and reasoning"
                     ]}
                 />
                 <ExperienceCard
@@ -54,7 +55,7 @@ const App = () => {
             </div>
         </section>
         <section id="skills">
-            <h2>Skills</h2>
+            <h2>Tech Stack</h2>
             <div class="skills-container">
                 <b>Languages:</b> C, C++, JavaScript, Rust, SQL, Python, Java, PHP, Typescript, R, HTML/CSS <br/>
                 <b>Tools/Frameworks: </b> VSCode, IntelliJ, Visual Studio, Pycharm, Git, MongoDB, FastAPI, Flask, Firebase, JUnit <br/>
@@ -62,7 +63,7 @@ const App = () => {
             </div>
         </section>
         <section id="contact">
-            <h2>Questions or Comments?</h2>        
+            <h2>Feedback </h2>        
             <EmailForm/>
             <p>Or shoot me an email at: gordonzhou223@gmail.com</p>
         </section>

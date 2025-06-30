@@ -18,16 +18,24 @@ const EmailForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         const email = inputs["email"];
+        const name = inputs["name"];
+        const subject = inputs["subject"];
         const content = inputs["content"];
 
         if (!content) {
-            setFormError("Content must be non-empty");
+            setFormError("Message must be non-empty");
+            setSuccess('');
+            return;
+        }
+
+        if (!email) {
+            setFormError("Email must be non-empty");
             setSuccess('');
             return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email && !emailRegex.test(email)) {
+        if (!emailRegex.test(email)) {
             setFormError("Please enter a valid email address");
             setSuccess('');
             return;
@@ -37,7 +45,7 @@ const EmailForm = () => {
             const response = await fetch(`${BACKEND_URL}/send-email`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, content }),
+                body: JSON.stringify({ email, name, subject, content }),
             });
 
             if (!response || !response.ok) {
@@ -47,7 +55,7 @@ const EmailForm = () => {
 
             const text = await response.text();
             setSuccess(`Message sent successfully!\nAnonymous: ${email ? "No" : "Yes"}\nEmail: ${email || "(empty)"}`);
-            console.log(text, email, content);
+            // console.log(text, email, content);
         } catch (e) {
             setFormError("Unable to send email :(");
             setSuccess('');
@@ -58,10 +66,20 @@ const EmailForm = () => {
         <div class="email-form-container">
             <form id="emailForm" onSubmit={handleSubmit}>
                 <p>Do you have any questions or comments, or just want to say hi? Feel free to use this form!</p>
-                <label for="email"><b>Your email (optional):</b></label>
-                <input class="email-input" type="text" name="email" placeholder="your email address here.." onChange={handleChange}/>
-                <textarea name="content" placeholder="your message here..." onChange={handleChange}/>
-                <input class="submit-button" type="submit"/>
+                <div class="contact-container">
+                    <div class="contact-field">
+                        <label for="email"><b>Email:</b></label>
+                        <input class="field-input" type="text" name="email" placeholder="Your Email...*" onChange={handleChange}/>
+                    </div>
+                    <div class="contact-field">
+                        <label for="name"><b>Name:</b></label>
+                        <input class="field-input" type="text" name="name" placeholder="Your Name..." onChange={handleChange}/>
+                    </div>
+                </div>
+                <label for="subject"><b>Subject:</b></label>
+                <input class="field-input" type="text" name="subject" placeholder="Your Subject..." onChange={handleChange}/>
+                <textarea name="content" placeholder="Your Message...*" onChange={handleChange}/>
+                <input class="button-main" type="submit"/>
                 {formError && <div class="error-message">Error: {formError}</div>}
                 {success && <div class="success-message">{success}</div>}
             </form>

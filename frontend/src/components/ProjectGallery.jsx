@@ -90,10 +90,10 @@ const ProjectMinicard = ({project, currentProject, setCurrentProject}) => {
         <div class={"project-minicard " + (project.name === currentProject.name && "selected")} onClick={() => setCurrentProject(project)}>
             <div class="top">
                 <h3 class="name">{project.name}</h3>
-                <h4 class="text-stack">{project.tech_tags.reduce(
+                <h5 class="stack">{project.tech_tags.reduce(
                     (acc, cur, i) => (i > MINI_TAG_LIMIT ? acc : (i == MINI_TAG_LIMIT ? acc + "..." : acc + cur + (i === project.tech_tags.length - 1 ? "" : " | "))),
                     ""
-                )}</h4>
+                )}</h5>
             </div>
             <div class="tags-container">
                 {project.other_tags.map((tag, i) => {

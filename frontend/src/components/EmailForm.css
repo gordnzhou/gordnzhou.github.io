@@ -12,15 +12,29 @@
     max-width: 900px;
 }
 
-#emailForm .email-input {
+#emailForm .contact-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#emailForm .contact-container .contact-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-right: 1vw;
+}
+
+#emailForm .field-input {
     font-size: 12pt;  
     font-family: Arial, Helvetica, sans-serif;
-    min-width: 250px;
+    max-width: 40vw;
+    width: 250px;
     padding: 0.5rem 0.75rem;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
 }
-#emailForm .email-input:focus {
+
+#emailForm .field-input:focus {
     outline: none;
     border: 2.5px solid var(--accent-color);
 }
@@ -34,7 +48,7 @@
     font-size: 12pt;  
     font-family: Arial, Helvetica, sans-serif;
     height: 10rem;
-    padding-right: 20rem;
+    padding-right: 40vw;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
 }
@@ -43,18 +57,18 @@
     border: 2.5px solid var(--accent-color);
 }
 
-#emailForm .submit-button {
-    border-radius: 10px;
-    border: 3px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 700;
-    background-color: var(--accent-color);
-    cursor: pointer;
-    width: 30%;
-}
+@media (max-width: 560px) {
+    #emailForm .contact-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-#emailForm .submit-button:hover {
-    filter: brightness(1.4);
-    transition: color 0.12s ease, filter 0.12s ease;
+    #emailForm .contact-container .contact-field {
+        align-items: center;
+    }
+
+    #emailForm {
+        align-items: center;
+    }
 }

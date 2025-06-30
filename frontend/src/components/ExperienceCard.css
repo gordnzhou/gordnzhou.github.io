@@ -12,6 +12,11 @@
 .exp-card .title {
     margin-bottom: 0;
     font-size: 1.5em;
+    text-decoration: underline;
+}
+
+.exp-card .sub-title .dur-text {
+    font-weight: 600;
 }
 
 .exp-card .sub-title {
@@ -25,4 +30,15 @@
     list-style-position: inside; 
     padding-left: 0;
     margin-top: 0;
+}
+
+@media (max-width: 768px) {
+    .exp-card .sub-title {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .exp-card .sub-title .dur-text {
+        margin-top: 0;
+    }
 }

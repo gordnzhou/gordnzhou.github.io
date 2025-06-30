@@ -37,6 +37,8 @@
 
 #navbar-top .resume-button {
     margin-left: 2rem;
+    height: 220%;
+    width: 220%;
 }
 
 .icon-link {

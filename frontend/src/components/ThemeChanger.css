@@ -6,26 +6,16 @@
 }
 
 .theme-prompt-input {
-    flex: 1; /* Allow the input to take up all available space */
+    flex: 1; 
     padding: 10px;
-    border-radius: 1rem; /* Round corners */
+    border-radius: 1rem;
     border: 1px solid #ccc;
     outline: none;
     font-size: 16px;
 }
 
 .theme-prompt-input:focus {
-    border-color: s; /* Change border color on focus */
-}
-
-.submit-button {
-    padding: 10px 15px;
-    margin-left: 10px;
-    border: none;
-    font-size: 16px;
-    color: inherit;
-    border-radius: 25px; /* Round corners to match input */
-    cursor: pointer;
+    border-color: s; 
 }
 
 .spinner {

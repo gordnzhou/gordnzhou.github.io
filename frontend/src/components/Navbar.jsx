@@ -22,7 +22,7 @@ const Navbar = () => {
                     <a class="icon-link" href="mailto:gordonzhou223@gmail.com" aria-label="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <button class="resume-button"><a href="https://gordnzhou.github.io/resume/" target="_blank">Resume</a></button>
+                    <button class="button-main resume-button"><a href="https://gordnzhou.github.io/resume/" target="_blank">Resume</a></button>
                 </div>
             </div>
         </nav>
