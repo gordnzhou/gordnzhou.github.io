@@ -40,14 +40,9 @@
   width: 100%;
 }
 
-#projects {
-  margin-top: 8rem;
+.header-main {
+  margin-bottom: 5rem;
 }
-
-#experience {
-  margin-top: 8rem;
-}
-
 
 #about {
   display: flex;

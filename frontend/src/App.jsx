@@ -15,7 +15,7 @@ const App = () => {
             </svg>
         </div>
 
-        <section id="about">
+        <section id="about" class="header-main">
             <div class="left-section">
                 <h1>Hello 👋 my name is Gordon</h1>
                 <p class="p-about">I am a third-year Math and Computer Science student at the University of British Columbia. 
@@ -27,11 +27,11 @@ const App = () => {
                 <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
             </div>
         </section>
-        <section id="projects">
+        <section id="projects" class="header-main">
             <h2>Technical Projects</h2>
             <ProjectGallery/>
         </section>
-        <section id="experience">
+        <section id="experience" class="header-main">
             <h2>Relevant Experience</h2>
             <div id="exp-list">
                 <ExperienceCard
@@ -54,7 +54,7 @@ const App = () => {
                 />
             </div>
         </section>
-        <section id="skills">
+        <section id="skills" class="header-main">
             <h2>Tech Stack</h2>
             <div class="skills-container">
                 <b>Languages:</b> C, C++, JavaScript, Rust, SQL, Python, Java, PHP, Typescript, R, HTML/CSS <br/>
@@ -62,7 +62,7 @@ const App = () => {
                 <b>Libraries: </b> React, Scikit-learn, Axios, ImGui, SDL2, OpenCV <br/>
             </div>
         </section>
-        <section id="contact">
+        <section id="contact" class="header-main">
             <h2>Feedback </h2>        
             <EmailForm/>
             <p>Or shoot me an email at: gordonzhou223@gmail.com</p>

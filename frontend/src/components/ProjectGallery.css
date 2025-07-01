@@ -32,7 +32,6 @@
     align-items: flex-start;
     border: solid 4px var(--accent-color);
     border-radius: 1rem;
-    line-height: 1;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     max-width: 500px;
@@ -108,7 +107,6 @@
     flex-direction: column;
     border: solid 1px var(--accent-color);
     border-radius: 1rem;
-    line-height: 1;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-bottom: 0.5rem;

@@ -19,16 +19,21 @@ const ThemeChanger = () => {
 
     const handleSubmit = async (e) => {
         if (!textInput) {
-            setErrorMsg("Please enter a prompt.");
+            setErrorMsg("Prompt cannot be empty.");
             setLoading(false);
             return;
         }
 
-        let data = cache[textInput.toLowerCase()];
+        changeTheme(textInput);
+    };
+
+    const changeTheme = async (prompt) => {
+        let data = cache[prompt.toLowerCase()];
+
         if (!data) {
             try {
                 setLoading(true);
-                const params = new URLSearchParams({ prompt: textInput });
+                const params = new URLSearchParams({ prompt });
                 const response = await fetch(`${BACKEND_URL}/theme-gen?${params.toString()}`);
     
                 if (!response || !response.ok) {
@@ -38,7 +43,7 @@ const ThemeChanger = () => {
                 data = await response.json();
 
                 setLoading(false);
-                cache[textInput.toLowerCase()] = data;
+                cache[prompt.toLowerCase()] = data;
                 console.log(data);
             } catch (e) {
                 setErrorMsg("Unable to find a theme :(")
@@ -52,8 +57,8 @@ const ThemeChanger = () => {
         document.documentElement.style.setProperty('--secondary-bg', data["secondary-bg"]);
         document.documentElement.style.setProperty('--accent-color', data["accent-color"]);
         document.documentElement.style.setProperty('--text-color', data["text-color"]);
-        setThemePrompt(`${textInput} ${data["emoji"] || ""}`);
-    };
+        setThemePrompt(`${prompt} ${data["emoji"] || ""}`);
+    }
 
     return (
         <>
@@ -66,9 +71,14 @@ const ThemeChanger = () => {
                 class="theme-prompt-input"
                 type="text"
                 onChange={handleInputChange}
-                placeholder="ex: Cherry Blossom, Deep Space"
+                placeholder="Describe a Theme"
             />
             <button class="button-main" onClick={handleSubmit}>Confirm {loading && <span className="spinner" aria-label="Loading..."></span>} </button>
+        </div>
+        <div class="suggestions-container">
+            <button class="button-main" onClick={() => changeTheme("sunny light")}>sunny light ☀️</button>
+            <button class="button-main" onClick={() => changeTheme("space dark")}>space dark 🌌</button>
+            <button class="button-main" onClick={() => changeTheme("cherry blossoms")}>cherry blossoms 🌸</button>
         </div>
         { errorMsg && <p class="error-message">Error: {errorMsg}</p>}
         </>

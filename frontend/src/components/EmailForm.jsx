@@ -64,8 +64,8 @@ const EmailForm = () => {
 
     return (
         <div class="email-form-container">
+            <p>Do you have any questions or comments, or just want to say hi? Feel free to use this form!</p>
             <form id="emailForm" onSubmit={handleSubmit}>
-                <p>Do you have any questions or comments, or just want to say hi? Feel free to use this form!</p>
                 <div class="contact-container">
                     <div class="contact-field">
                         <label for="email"><b>Email:</b></label>
