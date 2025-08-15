@@ -46,7 +46,7 @@
 
 #about {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 #about .left-section {
@@ -64,8 +64,8 @@
 }
 
 .profile-photo {
-  width: 25vw;
-  height: 25vw;
+  width: 20vw;
+  height: 20vw;
   border: 5px solid var(--accent-color);
   border-radius: 50%;
   overflow: hidden;

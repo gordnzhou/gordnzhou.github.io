@@ -12,6 +12,7 @@
     border: 1px solid #ccc;
     outline: none;
     font-size: 16px;
+    margin-right: 10px;
 }
 
 .theme-prompt-input:focus {

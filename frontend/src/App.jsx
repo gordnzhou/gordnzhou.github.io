@@ -57,9 +57,9 @@ const App = () => {
         <section id="skills" class="header-main">
             <h2>Tech Stack</h2>
             <div class="skills-container">
-                <b>Languages:</b> C, C++, JavaScript, Rust, SQL, Python, Java, PHP, Typescript, R, HTML/CSS <br/>
-                <b>Tools/Frameworks: </b> VSCode, IntelliJ, Visual Studio, Pycharm, Git, MongoDB, FastAPI, Flask, Firebase, JUnit <br/>
-                <b>Libraries: </b> React, Scikit-learn, Axios, ImGui, SDL2, OpenCV <br/>
+                <b>Languages:</b> C; C++; JavaScript; Rust; SQL; Python; Java; PHP; TypeScript; R <br/>
+                <b>Tools/Frameworks: </b> Git; Docker; Express; VSCode; IntelliJ; MongoDB; FastAPI; Flask; Firebase; JUnit <br/>
+                <b>Libraries: </b> React; Pandas; NumPy; Scikit-learn; SDL2; ImGui; OpenCV <br/>
             </div>
         </section>
         <section id="contact" class="header-main">
