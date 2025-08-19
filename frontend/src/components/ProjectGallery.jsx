@@ -7,7 +7,7 @@ const sortedProjects = [...projects].sort((a, b) =>
 );
 
 const tagBackgrounds = {
-    "Hackathon": "#f2a65a ",
+    "Hackathon": "#f2a65a",
     "Full Stack": "#4d90a0",
     "Frontend": "#b475d8",
     "Emulator": "#d94f4f",

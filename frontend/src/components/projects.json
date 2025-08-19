@@ -98,5 +98,15 @@
         "tech_tags": ["Python", "OpenCV", "Pygame"],
         "other_tags": [],
         "description": "A command-line script that plays any MP4 file as an ASCII animation in your CLI, with sound included! CLI Window is automatically resized to match aspect ratio and FPS is maintained for a smooth playback. a trend on the internet of shocasing remakes of the animation of Bad Apple!! Was inspired by an internet trend of animating the video, Bad Apple!! but on any medium you can think of."
+    },
+    {
+        "name": "HTTP Server in C",
+        "timeframe": "June 2025",
+        "date_meta": "6/1/2025",
+        "repo_link": "https://github.com/gordnzhou/httpserver-c",
+        "website_link": "",
+        "tech_tags": ["C", "Docker"],
+        "other_tags": [],
+        "description": "A lightweight HTTP server in C to serve static files via GET requests, using low-level sockets and file system calls. Automated builds with Makefile and containerized with Docker for easy deployment."
     }
 ]
