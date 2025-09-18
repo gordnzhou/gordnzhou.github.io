@@ -49,7 +49,7 @@ const ProjectCard = ({project}) => {
                     <h3 class="timeframe">{project.timeframe}</h3>
                 </div>
                 <h4 class="text-tags">{project.tech_tags.reduce(
-                    (acc, cur, i) => acc + cur + (i === project.tech_tags.length - 1 ? "" : " | "),
+                    (acc, cur, i) => acc + cur + (i === project.tech_tags.length - 1 ? "" : ", "),
                     ""
                 )}</h4>
             </div>
@@ -91,7 +91,7 @@ const ProjectMinicard = ({project, currentProject, setCurrentProject}) => {
             <div class="top">
                 <h3 class="name">{project.name}</h3>
                 <h5 class="stack">{project.tech_tags.reduce(
-                    (acc, cur, i) => (i > MINI_TAG_LIMIT ? acc : (i == MINI_TAG_LIMIT ? acc + "..." : acc + cur + (i === project.tech_tags.length - 1 ? "" : " | "))),
+                    (acc, cur, i) => (i > MINI_TAG_LIMIT ? acc : (i == MINI_TAG_LIMIT ? acc + "..." : acc + cur + (i === project.tech_tags.length - 1 ? "" : ", "))),
                     ""
                 )}</h5>
             </div>

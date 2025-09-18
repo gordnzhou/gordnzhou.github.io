@@ -8,24 +8,25 @@ import ProjectGallery from './components/ProjectGallery';
 const App = () => { 
     return (
         <>
-        <Navbar/>
         <div id="wave">
-        <svg viewBox="0 0 500 500" preserveAspectRatio="none" width="100%" height="150px">
-            <path d="M0,0 L0,200 C125,100 375,300 500,200 L500,0 Z"/>
+            <svg viewBox="0 0 500 500" preserveAspectRatio="none" width="100%" height="150px">
+                <path d="M0,0 L0,200 C125,100 375,300 500,200 L500,0 Z"/>
             </svg>
         </div>
-
+        <Navbar/>
         <section id="about" class="header-main">
-            <div class="left-section">
-                <h1>Hello 👋 my name is Gordon</h1>
-                <p class="p-about">I am a third-year Math and Computer Science student at the University of British Columbia. 
-                I've always loved coding - from making silly Discord bots in Grade 9 to now exploring new technologies like game console emulation and web development.
-                Beyond coding, I enjoy hiking, gaming, experimenting in the kitchen, and learning new languages.</p>
-                <ThemeChanger/>
-            </div>
-            <div class="profile-photo">
-                <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
-            </div>
+            <pre class="name-ascii">
+            {`
+╭━━━╮╱╱╱╱╱╱╭╮╱╱╱╱╱╱╭━━━━┳╮
+┃╭━╮┃╱╱╱╱╱╱┃┃╱╱╱╱╱╱╰━━╮━┃┃
+┃┃╱╰╋━━┳━┳━╯┣━━┳━╮╱╱╱╭╯╭┫╰━┳━━┳╮╭╮
+┃┃╭━┫╭╮┃╭┫╭╮┃╭╮┃╭╮╮╱╭╯╭╯┃╭╮┃╭╮┃┃┃┃
+┃╰┻━┃╰╯┃┃┃╰╯┃╰╯┃┃┃┃╭╯━╰━┫┃┃┃╰╯┃╰╯┃
+╰━━━┻━━┻╯╰━━┻━━┻╯╰╯╰━━━━┻╯╰┻━━┻━━╯`}
+            </pre>
+            <h1>Hello 👋</h1>
+            <p class="p-about">I am a 3rd year Math and Computer Science student at the University of British Columbia. I like to code, aka breaking things then fixing it into something interesting. Interested in web development and cloud technologies and eager to learn more about them.</p>
+            <ThemeChanger/>
         </section>
         <section id="projects" class="header-main">
             <h2>Technical Projects</h2>
@@ -67,6 +68,7 @@ const App = () => {
             <EmailForm/>
             <p>Or shoot me an email at: gordonzhou223@gmail.com</p>
         </section>
+        <footer></footer>
         </>
     )
 }

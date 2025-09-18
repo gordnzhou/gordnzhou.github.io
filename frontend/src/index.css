@@ -1,6 +1,5 @@
 :root {
-  font-family: "Lora", system-ui, Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: 'Consolas', monospace;
   line-height: 1.2em;
 
   color-scheme: light dark;
@@ -14,8 +13,8 @@
     var(--secondary-bg) 0,
     var(--secondary-bg) 300px,
     var(--bg-color) 300px, 
-    var(--bg-color) 75%,
-    var(--secondary-bg) 80%,
+    var(--bg-color) 99%,
+    var(--secondary-bg) 99%,
     var(--secondary-bg) 100%
   );
   color: var(--text-color);
@@ -26,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
   margin-top: 6rem;
   scroll-behavior: smooth;
+  overscroll-behavior: none;
+  padding: 0;
+}
+
+input {
+  font-family: inherit;
 }
 
 a {
@@ -38,20 +43,24 @@ body {
   display: flex;
   place-items: center;
   min-height: 100vh;
-  overscroll-behavior: none;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2.7em;
+  line-height: 1.2em;
 }
 
 p {
   font-size: 1.1em;
+}
+
+footer {
+  color: var(--secondary-bg);
+  height: 150px;
 }
 
 .button-main {

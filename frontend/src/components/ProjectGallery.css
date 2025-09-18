@@ -47,19 +47,24 @@
 .project-card .header {
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 
 .project-card .header .name {
     font-size: 2em;
-    margin-bottom: 0;
+    line-height: 1.2em;
     text-decoration: underline;
+    margin-top: 0;
 }
 
 .project-card .header .timeframe {
-    font-size: 1em;
-    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.project-card .text-tags {
+    margin-top: 0;
 }
 
 .project-card .footer {
@@ -69,7 +74,7 @@
 .project-card .description {
     display: flex;
     flex: 1;
-    align-items: center;
+    align-items: flex-start;
     font-weight: 500;
 }
 
@@ -119,10 +124,20 @@
     align-items: flex-end;
     text-align: left;
     margin: 0;
+    margin-top: 1rem;
+}
+
+.project-minicard .top .stack {
+    align-self: flex-end;
+    text-align: end;
+    margin-top: 0;
 }
 
 .project-minicard .top .name {
-    margin-right: 10px;
+    align-self: flex-start;
+    text-align: start;
+    margin-top: 0;
+    margin-right: 2rem;
 }
 
 .project-minicard .tags-container {
@@ -152,10 +167,13 @@
 
     .project-minicard .top .name {
         margin-bottom: 0;
+        font-size: 1.3em;
     }
 
     .project-minicard .top .stack {
         margin-top: 1vh;
+        align-self: flex-start;
+        text-align: start;
     }
 }
 

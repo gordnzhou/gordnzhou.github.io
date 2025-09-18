@@ -13,6 +13,29 @@ const EmailForm = () => {
         const value = event.target.value;
         setInputs(values => ({...values, [name]: value}));
         setFormError('');
+
+        console.log(name)
+
+        if (name === "email") {
+            if (!value) {
+                setFormError("Email must be non-empty");
+                setSuccess('');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                setFormError("Please enter a valid email address");
+                setSuccess('');
+                return;
+            }
+        }
+
+        if (name === "content" && !value) {
+            setFormError("Message must be non-empty");
+            setSuccess('');
+            return;
+        }
     }
 
     const handleSubmit = async (event) => {
@@ -21,25 +44,6 @@ const EmailForm = () => {
         const name = inputs["name"];
         const subject = inputs["subject"];
         const content = inputs["content"];
-
-        if (!content) {
-            setFormError("Message must be non-empty");
-            setSuccess('');
-            return;
-        }
-
-        if (!email) {
-            setFormError("Email must be non-empty");
-            setSuccess('');
-            return;
-        }
-
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setFormError("Please enter a valid email address");
-            setSuccess('');
-            return;
-        }
 
         try {
             const response = await fetch(`${BACKEND_URL}/send-email`, {
@@ -57,31 +61,34 @@ const EmailForm = () => {
             setSuccess(`Message sent successfully!\nEmail: ${email || "(empty)"}`);
             // console.log(text, email, content);
         } catch (e) {
-            setFormError("Unable to send email :(");
+            setFormError("Unexpected error, unable to send email :(");
+            console.log(e);
             setSuccess('');
         }
     }
 
     return (
         <div class="email-form-container">
-            <p>Any questions, comments, just want to say hi?</p>
+            <p>Any questions, comments, or just want to say hi?</p>
             <form id="emailForm" onSubmit={handleSubmit}>
+                {formError && <div class="error-message">!!! {formError}</div>}
+                {success && <div class="success-message">{success}</div>}
                 <div class="contact-container">
-                    <div class="contact-field">
+                    <div class="form-field">
                         <label for="email"><b>Email:</b></label>
-                        <input class="field-input" type="text" name="email" placeholder="Your Email...*" onChange={handleChange}/>
+                        <input class="field-input" type="text" name="email" placeholder="Your Email...*" onChange={handleChange} required/>
                     </div>
-                    <div class="contact-field">
+                    <div class="form-field">
                         <label for="name"><b>Name:</b></label>
                         <input class="field-input" type="text" name="name" placeholder="Your Name..." onChange={handleChange}/>
                     </div>
                 </div>
-                <label for="subject"><b>Subject:</b></label>
-                <input class="field-input" type="text" name="subject" placeholder="Your Subject..." onChange={handleChange}/>
-                <textarea name="content" placeholder="Your Message...*" onChange={handleChange}/>
+                <div class="form-field">
+                    <label for="subject"><b>Subject:</b></label>
+                    <input class="field-input" type="text" name="subject" placeholder="Your Subject..." onChange={handleChange}/>
+                </div>
+                <textarea name="content" placeholder="Your Message...*" onChange={handleChange} required/>
                 <input class="button-main" type="submit"/>
-                {formError && <div class="error-message">Error: {formError}</div>}
-                {success && <div class="success-message">{success}</div>}
             </form>
         </div>
     )
