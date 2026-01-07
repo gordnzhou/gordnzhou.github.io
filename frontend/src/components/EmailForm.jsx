@@ -9,12 +9,11 @@ const EmailForm = () => {
     const [success, setSuccess] = useState("");
 
     const handleChange = (event) => {
-        const name = event.target.name;
-        const value = event.target.value;
+        const { name, value } = event.target;
         setInputs(values => ({...values, [name]: value}));
         setFormError('');
 
-        console.log(name)
+        console.log(name);
 
         if (name === "email") {
             if (!value) {
@@ -58,10 +57,10 @@ const EmailForm = () => {
             }
 
             const text = await response.text();
-            setSuccess(`Message sent successfully!\nEmail: ${email || "(empty)"}`);
+            setSuccess(`Message has been sent. Thank you!\nYour email: ${email}`);
             // console.log(text, email, content);
         } catch (e) {
-            setFormError("Unexpected error, unable to send email :(");
+            setFormError("Unable to send, please try again later!");
             console.log(e);
             setSuccess('');
         }
@@ -72,7 +71,6 @@ const EmailForm = () => {
             <p>Any questions, comments, or just want to say hi?</p>
             <form id="emailForm" onSubmit={handleSubmit}>
                 {formError && <div class="error-message">!!! {formError}</div>}
-                {success && <div class="success-message">{success}</div>}
                 <div class="contact-container">
                     <div class="form-field">
                         <label for="email"><b>Email:</b></label>
@@ -89,6 +87,7 @@ const EmailForm = () => {
                 </div>
                 <textarea name="content" placeholder="Your Message...*" onChange={handleChange} required/>
                 <input class="button-main" type="submit"/>
+                {success && <div class="success-message">{success}</div>}
             </form>
         </div>
     )

@@ -33,7 +33,7 @@ export default async function sendEmail(request, env) {
         	'Content-Type': 'application/json'
       	},
       	body: JSON.stringify({ content: 
-            `Message from Personal Website\nSender Email: ${email}\nSender Name: ${name || "(none)"}\nSubject: ${subject || "(none)"}\nMessage: ${content}` 
+            `Message from Personal Website [sent at ${new Date()}]\nSender Email: ${email}\nSender Name: ${name || "(none)"}\nSubject: ${subject || "(none)"}\nMessage: ${content}` 
         })
     });
 

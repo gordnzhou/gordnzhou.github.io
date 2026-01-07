@@ -6,9 +6,9 @@ const Navbar = () => {
             <a href="#wave">
             <div id="left-section">
                     <div class="profile-photo small">
-                        <img src="assets/myphoto.png" alt="Gordon's Profile Photo"/>
+                        <img src="assets/myphotoALT.webp" alt="Gordon Photo"/>
                     </div>
-                    <p class="name">Gordon Zhou</p>
+                    <h2 class="name">Gordon Zhou</h2>
             </div>
             </a>
             <div id="right-section">

@@ -10,7 +10,7 @@ const App = () => {
         <>
         <div id="wave">
             <svg viewBox="0 0 500 500" preserveAspectRatio="none" width="100%" height="150px">
-                <path d="M0,0 L0,200 C125,100 375,300 500,200 L500,0 Z"/>
+                <path d="M0,0 L0,200 C125,100 375,300 500,200 L500,0 Z"s/>
             </svg>
         </div>
         <Navbar/>
@@ -24,8 +24,8 @@ const App = () => {
 ┃╰┻━┃╰╯┃┃┃╰╯┃╰╯┃┃┃┃╭╯━╰━┫┃┃┃╰╯┃╰╯┃
 ╰━━━┻━━┻╯╰━━┻━━┻╯╰╯╰━━━━┻╯╰┻━━┻━━╯`}
             </pre>
-            <h1>Hello 👋</h1>
-            <p class="p-about">I am a 3rd year Math and Computer Science student at the University of British Columbia. I like to code, aka breaking things then fixing it into something interesting. Interested in web development and cloud technologies and eager to learn more about them.</p>
+            <h2 class="big-hello">Hello! About me:</h2>
+            <p class="p-about">Combined Math + CS major at UBC trying to learn Vim. Currently interested in web dev, and cloud technologies and always eager to learn more.</p>
             <ThemeChanger/>
         </section>
         <section id="projects" class="header-main">
@@ -36,8 +36,17 @@ const App = () => {
             <h2>Relevant Experience</h2>
             <div id="exp-list">
                 <ExperienceCard
+                    title="Performance Test Engineer"
+                    duration="September 2025 - April 2025"
+                    organization="Optum"
+                    bullets={[
+                        "Engineered and maintained performance testing tools and automation scripts using C# and Python across both on-premise and GCP cloud environments",
+                        "Designed, documented, and integrated a C# script using Selenium and Microsoft UI Automation that automated existing stopwatch tests, reducing manual testing workflow by 80%",
+                    ]}
+                />
+                <ExperienceCard
                     title="Teaching Assistant"
-                    duration="September 2024 - Present"
+                    duration="September 2024 - January 2025"
                     organization="University of British Columbia"
                     bullets={[
                         "Taught and guided 500+ students in UBC's introductory computer science course CPSC 121, leading lab sections for 180+ students and instructing them in circuit design and simulation",
@@ -58,15 +67,15 @@ const App = () => {
         <section id="skills" class="header-main">
             <h2>Tech Stack</h2>
             <div class="skills-container">
-                <b>Languages:</b> C; C++; JavaScript; Rust; SQL; Python; Java; PHP; TypeScript; R <br/>
-                <b>Tools/Frameworks: </b> Git; Docker; Express; VSCode; IntelliJ; MongoDB; FastAPI; Flask; Firebase; JUnit <br/>
-                <b>Libraries: </b> React; Pandas; NumPy; Scikit-learn; SDL2; ImGui; OpenCV <br/>
+                <b>Languages:</b> C; C++; JavaScript; Python; C# Rust; SQL; Java; PHP; TypeScript <br/>
+                <b>Tools/Frameworks: </b> Git; Docker; Express; VSCode; Vim; IntelliJ; MongoDB; FastAPI; Flask; Firebase; JUnit <br/>
+                <b>Libraries: </b> React; Pandas; NumPy; Scikit-learn; SDL2; ImGui <br/>
             </div>
         </section>
         <section id="contact" class="header-main">
-            <h2>Feedback </h2>        
+            <h2>Direct Contact</h2>        
             <EmailForm/>
-            <p>Or shoot me an email at: gordonzhou223@gmail.com</p>
+            <p>Or shoot me an email at: <u><a href="mailto:gordonzhou223@gmail.com" target="_blank" >gordonzhou223@gmail.com</a></u></p>
         </section>
         <footer></footer>
         </>

@@ -68,6 +68,10 @@
   font-weight: 500;
 }
 
+#about .big-hello {
+  margin-bottom: 0;
+}
+
 .profile-photo {
   width: 20vw;
   height: 20vw;
